@@ -1,3 +1,46 @@
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
 h1 {
     color: red;
+}
+nav{
+    background-color: darkblue;
+    width: 100%;
+    overflow: hidden;
+
+}
+nav > label{
+    color:White;
+    font-size: 30px;
+    padding:0 50px;
+    font-weight: bold;
+    line-height: 80px;
+}
+
+
+nav ul{
+    list-style: none;
+    float:right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin:0 10px;
+}
+nav ul li a {
+    color: white;
+    font-size: 17px;
+
+    padding:10px;
+    border-radius: 10px;  
+}
+
+nav a:hover{
+    background-color: blue;
 }

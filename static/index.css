@@ -41,3 +41,50 @@ nav ul li a {
 nav a:hover{
     background-color: blue;
 }
+.log-in{
+    margin: 270px auto;
+}
+.container{
+    width: 320px;
+    margin:auto;
+    background-color: whitesmoke;
+    padding: 40px;
+}
+.header{
+    margin: 0px auto 30px auto;
+    text-align: center;
+}
+.body{
+    text-align: center;
+}
+input{
+    margin: 0px auto 30px auto;
+    width: 100%;
+}
+button{
+    margin: 0px auto 30px auto;
+    width: 100px;
+    padding: 5px;
+}
+
+.sign-up{
+    text-align: center;
+    margin: 0px auto 10px auto;
+
+}
+.guest-user{
+    text-align: center;
+}
+@media screen and (max-width: 525px) {
+    nav {
+        display: block;
+        padding: 0;
+        text-align: center;
+    }
+    nav ul {
+        margin: auto;
+        float:none;
+        text-align: center;
+        align-items: center;
+    }
+}

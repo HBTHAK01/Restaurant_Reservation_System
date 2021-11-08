@@ -7,14 +7,40 @@
 {% block body %}
 <section class = "nav-link">
     <nav>
-        <label>Name of Application</label>
+        <label>Appplication</label>
             <ul>
                 <li> <a href = "#">Login</a></li>
-                <li> <a href = "#">Register</a></li>
+                <li> <a href = "#">Guest-User</a></li>
             </ul>
     </nav>
 </section>
 
+<section class = "log-in">
+    <div class = container>
+        <div class = "header">
+            <h1>Login</h1> 
+        </div>
+        <div class = "body">
+            <form>
+                <span>
+                    <i></i>
+                    <input type = "text" placeholder="Email" name = "">
+                </span><br>
+                <span>
+                    <i></i>
+                    <input type = "password" placeholder="Password" name = "">
+                </span><br>
+                <button type = "submit">LogIn</button>
+            </form>
+        </div>
+        <div class = "sign-up">
+            <p>Don't have an account: <a href = #>Sign Up</a> </p>   
+        </div>
+        <div class = "guest-user">
+            <a href = #>Guest-User</a> 
+        </div>
+    </div>
+</section>
 </html>
 
 {% endblock %}

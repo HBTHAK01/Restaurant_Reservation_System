@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Home Page</title>
 <link rel="stylesheet" href={{ url_for('static', filename='index.css') }}
 {% endblock %}
 
 {% block body %}
 <section class = "nav-link">
     <nav>
-        <label>Group 2</label>
+        <label>Name of Application</label>
             <ul>
                 <li> <a href = "#">Login</a></li>
                 <li> <a href = "#">Register</a></li>
@@ -16,5 +15,6 @@
     </nav>
 </section>
 
+</html>
 
 {% endblock %}

@@ -4,9 +4,7 @@
     text-decoration: none;
     box-sizing: border-box;
 }
-h1 {
-    color: red;
-}
+
 nav{
     background-color: darkblue;
     width: 100%;
@@ -20,7 +18,6 @@ nav > label{
     font-weight: bold;
     line-height: 80px;
 }
-
 
 nav ul{
     list-style: none;

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
+<title>Home Page</title>
 <link rel="stylesheet" href={{ url_for('static', filename='index.css') }}
 {% endblock %}
 
@@ -23,13 +24,12 @@
         <div class = "body">
             <form>
                 <span>
-                    <i></i>
+                    
                     <input type = "text" placeholder="Email" name = "">
-                </span><br>
+                </span>
                 <span>
-                    <i></i>
                     <input type = "password" placeholder="Password" name = "">
-                </span><br>
+                </span>
                 <button type = "submit">LogIn</button>
             </form>
         </div>

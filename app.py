@@ -10,6 +10,9 @@ def hello_world():
 def sign_up():
     return render_template('sign_up.html')
 
+@app.route("/reservation")
+def reservation():
+    return render_template("reservation.html")
 if __name__ == '__main__':
  
     # run() method of Flask class runs the application

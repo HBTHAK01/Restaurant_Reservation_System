@@ -71,8 +71,6 @@ button{
     text-align: center;
 }
 
-
-
 @media screen and (max-width: 900px) {
     body{
         background-position: center top;

@@ -67,10 +67,6 @@ button{
     margin: 0px auto 10px auto;
 }
 
-.sign-up a:hover{
-    color: red;
-
-}
 .guest-user{
     text-align: center;
 }

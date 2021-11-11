@@ -1,11 +1,53 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Sign Up</title>
+<title>Home Page</title>
+<link rel="stylesheet" href="static\css\sign_up.css"
 {% endblock %}
 
 {% block body %}
-<br>
-<h1>Sign Up</h1>
-<br>
+
+<section class = "nav">
+    <div class = "background-card">
+        <img alt = "background" src = "static/images/Home Page Background.jpg">
+    </div>
+</section>
+
+<section class = "log-in">
+    <div class = container>
+        <div class = "header">
+            <h1>Sign Up Form</h1> 
+        </div>
+        <div class = "body">
+            <form>
+                <span>
+                    <input class = "span1" type = "text" placeholder="First Name" name = "">
+                </span>
+                <span>
+                    <input class = "span2" type = "text" placeholder="Last Name" name = "">
+                </span>
+                <span>
+                    <input class = "span2" type = "text" placeholder="Phone Number" name = "">
+                </span>
+                <span>
+                    <input class = "span2" type = "text" placeholder="Email Address" name = "">
+                </span>
+                <span>
+                    <input class = "span2" type = "password" placeholder="Create Password" name = "">
+                </span>
+                <span>
+                    <input class = "span2" type = "password" placeholder="Confirm Password" name = "">
+                </span>
+                
+                <button type = "submit">Sign Up</button>
+            </form>
+        </div>
+        <div class = "sign-up">
+            <p>Already a member? <a href = "http://127.0.0.1:5000/">Login Now</a> </p>   
+        </div>
+        <div class = "guest-user">
+            <a href = reservation>Continue as Guest</a> 
+        </div>
+    </div>
+</section>
 {% endblock %}

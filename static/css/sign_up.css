@@ -30,8 +30,14 @@ body{
     text-align: center;
 }
 
-.header > h1{
+.header > label{
     font-size: 30px;
+    font-weight: bolder;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
 }
 .body{
     text-align: center;

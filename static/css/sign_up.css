@@ -10,17 +10,18 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
-    background-attachment: scroll;
-    
+    /* background-attachment: scroll; */
+    /* add */
+    overflow: hidden;
 }
 
-.log-in{
-    margin: 270px auto;
-}
+/* .log-in{
+    margin: 10% auto;
+} */
 
 .container{
     width: 320px;
-    margin: auto auto auto 10%;
+    margin: 9.5% 10%;
     background-color: whitesmoke;
     padding: 40px;
 }
@@ -33,11 +34,16 @@ body{
 .header > label{
     font-size: 30px;
     font-weight: bolder;
+    font-style: italic;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     
+}
+.header > p{
+    margin-top: 15px;
+    font-style: italic;
 }
 .body{
     text-align: center;
@@ -77,11 +83,19 @@ button{
     text-align: center;
 }
 
-
+/* add */
+@media screen and (max-width: 1300px) and (max-height: 800px){
+    body{
+        overflow: auto;
+    }
+}
 @media screen and (max-width: 900px) {
     body{
         background-position: center top;
         background-size: 100% 30%;
+        /* add */
+        overflow: auto;
+
     }
     .log-in{
         margin: auto;

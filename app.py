@@ -8,28 +8,12 @@ app = Flask(__name__)
 # Database Part for MySQL
 mydb = mysql.connector.connect(
   host="localhost",
-  user="username",
-  password="password",
+  user="root",
+  password="Leocrz99!",
   database="Restaurant_Reservation"
 )
 
 mycursor = mydb.cursor()
-
-# mycursor.execute("CREATE DATABASE Restaurant_Reservation")
-
-# sql_createtable = """CREATE TABLE Users (
-#                     First_Name VARCHAR(255), 
-#                     Last_Name VARCHAR(255),
-#                     Phone_Number VARCHAR(255),
-#                     Email VARCHAR(255),
-#                     Password VARCHAR(255)
-#                     )"""
-
-
-
-
-
-# Routing Part
 
 @app.route("/", methods=['GET', 'POST'])
 def hello_world():

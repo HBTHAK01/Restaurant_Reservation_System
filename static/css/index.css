@@ -10,17 +10,18 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
-    background-attachment: scroll;
-    
+    /* background-attachment: scroll; */
+    /* add */
+    overflow: hidden;
 }
 
-.log-in{
-    margin: 270px auto;
-}
+/* .log-in{
+    margin:  auto;
+} */
 
 .container{
     width: 320px;
-    margin: auto auto auto 10%;
+    margin: 15% 10%;
     background-color: whitesmoke;
     padding: 40px;
 }
@@ -82,11 +83,19 @@ button{
     text-align: center;
 }
 
-
+/* add */
+@media screen and (max-width: 1300px) and (max-height: 800px){
+    body{
+        overflow: auto;
+    }
+}
 @media screen and (max-width: 900px) {
     body{
         background-position: center top;
         background-size: 100% 30%;
+        /* add */
+        overflow: auto;
+
     }
     .log-in{
         margin: auto;

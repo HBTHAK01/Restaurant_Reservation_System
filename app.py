@@ -1,33 +1,17 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, flash
 import mysql.connector
 from werkzeug.utils import redirect
 
 app = Flask(__name__)
-
+app.secret_key = "abc"  
 
 # Database Part for MySQL
 mydb = mysql.connector.connect(
   host="localhost",
-  user="username",
-  password="password",
+  user="root",
+  password="",
   database="Restaurant_Reservation"
 )
-
-mycursor = mydb.cursor()
-
-# mycursor.execute("CREATE DATABASE Restaurant_Reservation")
-
-# sql_createtable = """CREATE TABLE Users (
-#                     First_Name VARCHAR(255), 
-#                     Last_Name VARCHAR(255),
-#                     Phone_Number VARCHAR(255),
-#                     Email VARCHAR(255),
-#                     Password VARCHAR(255)
-#                     )"""
-
-
-
-
 
 # Routing Part
 
@@ -39,14 +23,17 @@ def hello_world():
 
         mycursor = mydb.cursor()
         sql_select = "SELECT Email, Password FROM Users"
-        mycursor.execute(sql_select)       
+        mycursor.execute(sql_select) 
         result = mycursor.fetchall()
-        
+        print(result)
         for i in range(len(result)):
             if email_login == result[i][0] and pass_login == result[i][1]:
                 return redirect ("/reservation")
+            else:
+                flash("Email and/or password is incorrect.", "error")
 
     return render_template("index.html")
+
 
 @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
@@ -67,6 +54,8 @@ def sign_up():
             mydb.commit()
 
             return redirect ("http://127.0.0.1:5000/")
+        else:
+            flash("Password fields do not match", "error")
         
     return render_template("sign_up.html")
 

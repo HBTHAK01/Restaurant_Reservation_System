@@ -23,7 +23,7 @@ def hello_world():
 
         mycursor = mydb.cursor()
         sql_select = "SELECT Email, Password FROM Users"
-        mycursor.execute(sql_select)       
+        mycursor.execute(sql_select) 
         result = mycursor.fetchall()
         print(result)
         for i in range(len(result)):
@@ -33,6 +33,7 @@ def hello_world():
                 flash("Email and/or password is incorrect.", "error")
 
     return render_template("index.html")
+
 
 @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():

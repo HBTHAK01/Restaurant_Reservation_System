@@ -13,13 +13,22 @@
             <label>Registro</label> 
             <p>Restaurant reservation made easier with one click</p>
         </div>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p class = "span1">{{msg}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}    
+
         <div class = "body">
             <form method = "POST">
                 <span>
-                    <input class = "span1" type = "text" placeholder="Email Address" name = "email_login">
+                    <input class = "span1" type = "text" placeholder="Email Address" name = "email_login" required>
                 </span>
                 <span>
-                    <input class = "span2" type = "password" placeholder="Password" name = "pass_login">
+                    <input class = "span2" type = "password" placeholder="Password" name = "pass_login" required>
                 </span>
                 <a href = #>Forgot password?</a> 
                 <button type = "submit">LogIn</button>

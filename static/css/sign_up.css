@@ -11,7 +11,6 @@ body{
     background-position: center;
     background-size: 100% 100%;
     background-attachment: fixed;
-    /* add */
     overflow: hidden;
 }
 
@@ -52,6 +51,13 @@ input.span1{
     margin: 0px auto 30px auto;
     width: 100%;
     padding: 10px;
+}
+
+p.span1{
+    margin: 0px auto;
+    width: 100%;
+    padding: 5px;
+    color: red;
 }
 
 input.span2{

@@ -9,7 +9,7 @@ app.secret_key = "abc"
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="Amerika1__",
+  password="",
   database="Restaurant_Reservation"
 )
 

@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+nav{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
+    width: 100%;
+    overflow: hidden;
+}
+nav > label{
+    color:White;
+    font-size: 30px;
+    padding:0 50px;
+    font-weight: bold;
+    line-height: 80px;
+}
+
+nav ul {
+    list-style: none;
+    float:right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin:0 10px;
+}
+nav ul li a {
+    color: white;
+    font-size: 17px;
+
+    /* a.active, a.hover background radius becomes more visible */
+    padding:10px;
+    border-radius: 10px;  
+}
+
+li > a:hover{
+    background-color: burlywood;
+}

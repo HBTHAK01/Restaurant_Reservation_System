@@ -14,10 +14,6 @@ body{
     overflow: hidden;
 }
 
-/* .log-in{
-    margin: 10% auto;
-} */
-
 .container{
     width: 320px;
     margin: 9.5% 10%;
@@ -89,7 +85,6 @@ button{
     text-align: center;
 }
 
-/* add */
 @media screen and (max-width: 1300px) and (max-height: 800px){
     body{
         overflow: auto;
@@ -99,7 +94,6 @@ button{
     body{
         background-position: center top;
         background-size: 100% 30%;
-        /* add */
         overflow: auto;
 
     }

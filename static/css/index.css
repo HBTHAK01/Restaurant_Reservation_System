@@ -98,11 +98,8 @@ button{
     body{
         background-position: center top;
         background-size: 100% 30%;
-        /* add */
         overflow: auto;
         background-attachment: scroll;
-
-
     }
     .log-in{
         margin: auto;

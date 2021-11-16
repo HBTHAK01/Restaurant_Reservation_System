@@ -4,7 +4,9 @@
     text-decoration: none;
     box-sizing: border-box;
 }
-
+html,body{
+    height:100%;
+}
 nav{
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
     width: 100%;
@@ -39,4 +41,42 @@ nav ul li a {
 
 li > a:hover{
     background-color: burlywood;
+}
+
+.background-img{
+    background-image: url("../images/Reservation Background.jpg");
+    filter: blur(4px);
+    height:100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-text {
+    background-color: white; /* Black w/opacity/see-through */
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+@media screen and (max-width: 525px) {
+    nav {
+        display: block;
+        padding: 0;
+        text-align: center;
+    }
+    nav > label{
+        padding:0px;
+
+    }
+    nav ul {
+        margin: auto;
+        float:none;
+        text-align: center;
+        align-items: center;
+    }
 }

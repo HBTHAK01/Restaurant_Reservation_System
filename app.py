@@ -28,7 +28,7 @@ def hello_world():
         print(result)
         for i in range(len(result)):
             if email_login == result[i][0] and pass_login == result[i][1]:
-                return redirect ("/reservation")
+                return redirect ("/user_reservation")
             else:
                 flash("Email and/or password is incorrect.", "error")
 
@@ -59,10 +59,33 @@ def sign_up():
         
     return render_template("sign_up.html")
 
+@app.route("/user_reservation", methods=['GET', 'POST'])
+def user_reservation():
+    msg = ''
+    if request.method == 'POST':
+        email = request.form['email']
+
+        mycursor = mydb.cursor()
+        mycursor.execute('Select First_Name from users where Email = %s', (email))
+        msg = mycursor.fetchone()
+        return render_template("user_reservation.html",msg=msg)
+
+        # if msg:
+
+    else:
+        msg = "USERS"
+        return render_template("user_reservation.html",msg=msg)
+# msg = ''
+#     if request.method == 'GET':
+#         mycursor = mydb.cursor()
+#         mycursor.execute('Select first_name from users')
+#         msg = mycursor.fetchall()
 @app.route("/reservation")
 def reservation():
     return render_template("reservation.html")
 
+
+    
 if __name__ == '__main__':
  
     # run() method of Flask class runs the application

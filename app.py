@@ -69,9 +69,6 @@ def user_reservation():
         mycursor.execute('Select First_Name from users where Email = %s', (email))
         msg = mycursor.fetchone()
         return render_template("user_reservation.html",msg=msg)
-
-        # if msg:
-
     else:
         msg = "USERS"
         return render_template("user_reservation.html",msg=msg)

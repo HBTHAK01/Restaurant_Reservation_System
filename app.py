@@ -40,7 +40,7 @@ def hello_world():
 
         if account:
             # session['name'] = account['name']
-            session['name'] = account[0]
+            session['name'] = account[0] #change tuple
 
             return redirect ("/user_reservation")
         else:

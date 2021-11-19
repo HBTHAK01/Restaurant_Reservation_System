@@ -1,8 +1,16 @@
-from flask import Flask, render_template, url_for, request, flash
+from flask import Flask, render_template, url_for, request, flash, redirect, session
+from flask_session import Session
 import mysql.connector
 from werkzeug.utils import redirect
 
 app = Flask(__name__)
+
+#add
+app.config["SESSION_PERMANENT"] =  False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
+#end add
+
 app.secret_key = "abc"  
 
 # Database Part for MySQL
@@ -19,18 +27,34 @@ mycursor = mydb.cursor()
 def hello_world():
     if request.method == "POST":
         email_login = request.form['email_login']
-        pass_login = request.form['pass_login']
+        pass_login = request.form['pass_login']  
+              
+        # mycursor = mydb.cursor()
+        # sql_select = "SELECT Email, Password FROM Users"
+        # mycursor.execute(sql_select) 
+        # result = mycursor.fetchall()
 
-        mycursor = mydb.cursor()
-        sql_select = "SELECT Email, Password FROM Users"
-        mycursor.execute(sql_select) 
-        result = mycursor.fetchall()
-        print(result)
-        for i in range(len(result)):
-            if email_login == result[i][0] and pass_login == result[i][1]:
-                return redirect ("/user_reservation")
-            else:
-                flash("Email and/or password is incorrect.", "error")
+        # session["email"] = email_login #get email to html 
+        mycursor.execute('SELECT First_Name FROM users WHERE email = %s AND password = %s', (email_login, pass_login ))
+        account = mycursor.fetchone()
+
+        if account:
+            # session['name'] = account['name']
+            session['name'] = account
+
+            return redirect ("/user_reservation")
+        else:
+           flash("Email and/or password is incorrect.", "error")
+
+        # print(result)
+        # for i in range(len(result)):
+        #     if email_login == result[i][0] and pass_login == result[i][1]:
+        #         # mycursor.execute('Select First_Name from users where Email = %s', (email_login))
+        #         # msg = mycursor.fetchone()
+        #         session["name"] = "HELLO"
+        #         return redirect ("/user_reservation")
+        #     else:
+        #         flash("Email and/or password is incorrect.", "error")
 
     return render_template("index.html")
 
@@ -61,28 +85,19 @@ def sign_up():
 
 @app.route("/user_reservation", methods=['GET', 'POST'])
 def user_reservation():
-    msg = ''
-    if request.method == 'POST':
-        email = request.form['email']
+    # msg = ''
+    # # if request.method == 'POST':
+    # email = session["email"]
 
-        mycursor = mydb.cursor()
-        mycursor.execute('Select First_Name from users where Email = %s', (email))
-        msg = mycursor.fetchone()
-        return render_template("user_reservation.html",msg=msg)
-    else:
-        msg = "USERS"
-        return render_template("user_reservation.html",msg=msg)
-# msg = ''
-#     if request.method == 'GET':
-#         mycursor = mydb.cursor()
-#         mycursor.execute('Select first_name from users')
-#         msg = mycursor.fetchall()
+    # mycursor = mydb.cursor()
+    # mycursor.execute('Select First_Name from users where Email = %s', (email))
+    # msg = mycursor.fetchone()
+    return render_template("user_reservation.html")
+
 @app.route("/reservation")
 def reservation():
     return render_template("reservation.html")
-
-
-    
+ 
 if __name__ == '__main__':
  
     # run() method of Flask class runs the application

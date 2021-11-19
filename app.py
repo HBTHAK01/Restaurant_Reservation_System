@@ -62,21 +62,23 @@ def sign_up():
 @app.route("/user_reservation", methods=['GET', 'POST'])
 def user_reservation():
     msg = ''
-    if request.method == 'POST':
-        email = request.form['email']
+    # if request.method == 'POST':
+    #     email = request.form['email']
 
-        mycursor = mydb.cursor()
-        mycursor.execute('Select First_Name from users where Email = %s', (email))
-        msg = mycursor.fetchone()
-        return render_template("user_reservation.html",msg=msg)
-    else:
-        msg = "USERS"
-        return render_template("user_reservation.html",msg=msg)
+    #     mycursor = mydb.cursor()
+    #     mycursor.execute('Select First_Name from users where Email = %s', (email))
+    #     msg = mycursor.fetchone()
+    #     return render_template("user_reservation.html",msg="LOL")
+    # else:
+    #     msg = "USERS"
+    #     return render_template("user_reservation.html",msg=msg)
 # msg = ''
-#     if request.method == 'GET':
-#         mycursor = mydb.cursor()
-#         mycursor.execute('Select first_name from users')
-#         msg = mycursor.fetchall()
+    if request.method == 'GET':
+        mycursor = mydb.cursor()
+        mycursor.execute('Select first_name from users')
+        msg = mycursor.fetchall()
+        return render_template("user_reservation.html",msg=msg)
+
 @app.route("/reservation")
 def reservation():
     return render_template("reservation.html")

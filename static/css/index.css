@@ -5,21 +5,23 @@
     box-sizing: border-box;
 }
 
+
 body{
     background-image: url("../images/Home Page Background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
     background-attachment: fixed;
-    /* overflow: hidden; */
-    
+    overflow: hidden; 
 }
 
 .container{
     width: 320px;
-    margin: 13% 10%;
+    margin: 25vh 10vw;
     background-color: whitesmoke;
     padding: 40px;
+    position: relative;
+
 }
 
 .header{
@@ -86,22 +88,20 @@ button{
     text-align: center;
 }
 
-@media screen and (max-width: 1300px) and (max-height: 1000px){
+
+@media screen and (max-width: 900px), screen and (max-height: 630px) {
     body{
-        overflow: auto;
-    }
-}
-@media screen and (max-width: 900px) {
-    body{
+        /* background-image: none; */
         background-position: center top;
         background-size: 100% 30%;
-        /* overflow: auto; */
+        background-attachment: scroll;
+        overflow: auto;
+
     }
-    .log-in{
-        margin: auto;
-    }
+
     .container{
         margin: 480px auto 160px auto;
+        /* margin: 50% auto; */
     }
 }
 

@@ -15,7 +15,7 @@ app.secret_key = "abc"
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="Leocrz99!",
+  password="",
   database="Restaurant_Reservation"
 )
 
@@ -26,12 +26,7 @@ def hello_world():
     if request.method == "POST":
         email_login = request.form['email_login']
         pass_login = request.form['pass_login']  
-        # mycursor = mydb.cursor()
-        # sql_select = "SELECT Email, Password FROM Users"
-        # mycursor.execute(sql_select) 
-        # result = mycursor.fetchall()
-
-        # session["email"] = email_login #get email to html       
+        
         mycursor.execute('SELECT * FROM users WHERE email = %s AND password = %s', (email_login, pass_login, ))
         account = mycursor.fetchone()
 
@@ -41,15 +36,7 @@ def hello_world():
             return redirect ("/user_reservation")
         else:
            flash("Email and/or password is incorrect.", "error")
-        # print(result)
-        # for i in range(len(result)):
-        #     if email_login == result[i][0] and pass_login == result[i][1]:
-        #         # mycursor.execute('Select First_Name from users where Email = %s', (email_login))
-        #         # msg = mycursor.fetchone()
-        #         session["name"] = "HELLO"
-        #         return redirect ("/user_reservation")
-        #     else:
-        #         flash("Email and/or password is incorrect.", "error")
+        
     return render_template("index.html")
 
 @app.route('/sign_up', methods=['GET', 'POST'])

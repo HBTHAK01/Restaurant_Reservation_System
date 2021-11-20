@@ -35,12 +35,12 @@ def hello_world():
         # result = mycursor.fetchall()
 
         # session["email"] = email_login #get email to html 
-        mycursor.execute('SELECT First_Name FROM users WHERE email = %s AND password = %s', (email_login, pass_login ))
+        mycursor.execute('SELECT * FROM users WHERE email = %s AND password = %s', (email_login, pass_login, ))
         account = mycursor.fetchone()
 
         if account:
             # session['name'] = account['name']
-            session['name'] = account
+            session['name'] = account[0] #change tuple
 
             return redirect ("/user_reservation")
         else:

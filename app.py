@@ -41,6 +41,7 @@ def hello_world():
 
 @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
+    
     if request.method == 'POST':
         fname = request.form['fname']
         lname = request.form['lname']
@@ -55,7 +56,13 @@ def sign_up():
         if account:
             flash("Email already exists")
 
-        elif pass_word == pass_c:
+        elif pass_word != pass_c:
+            flash("Password fields do not match", "error")
+
+        elif len(pass_word) < 7:
+            flash("Password must contain at least 7 characters.")
+
+        else:
             # mycursor = mydb.cursor()
             sql_insert = """INSERT INTO Users (First_Name, Last_Name, Phone_Number, Email, Password)
                             VALUES (%s, %s, %s, %s, %s)"""
@@ -64,8 +71,7 @@ def sign_up():
             mydb.commit()
 
             return redirect ("http://127.0.0.1:5000/")
-        else:
-            flash("Password fields do not match", "error")
+        
         
     return render_template("sign_up.html")
 

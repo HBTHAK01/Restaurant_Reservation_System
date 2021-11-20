@@ -12,6 +12,14 @@
         <div class = "header">
             <label>Sign Up Form</label> 
         </div>
+        {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                            <p class = "span1">{{msg}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
         <div class = "body">
             <form  method = "POST">
                 <span>
@@ -21,19 +29,11 @@
                     <input class = "span1" type = "text" placeholder="Last Name" name = "lname" required>
                 </span>
                 <span>
-                    <input class = "span1" type = "text" placeholder="Phone Number" name = "contact" required>
+                    <input class = "span1" type = "tel" placeholder= "Contact: 012-345-6789" name = "contact" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                 </span>
                 <span>
-                    <input class = "span1" type = "text" placeholder="Email Address" name = "email" required>
+                    <input class = "span1" type = "email" placeholder="Email Address" name = "email" required>
                 </span>
-
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        {% for msg in messages %}
-                            <p class = "span1">{{msg}}</p>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
 
                 <span>
                     <input class = "span1" type = "password" placeholder="Create Password" name = "pass_word" required>

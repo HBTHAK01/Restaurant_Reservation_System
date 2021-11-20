@@ -28,16 +28,16 @@
             <input class = "span1" type = "text" placeholder= "Name" name = "" required>
         </span>
         <span>
-            <input class = "span1" type = "text" placeholder= "Phone no." name = "" required>
+            <input class = "span1" type = "tel" placeholder= "Contact: 012-345-6789" name = "" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
         </span>
         <span>
-            <input class = "span1" type = "text" placeholder="Email Address" name = "" required>
+            <input class = "span1" type = "email" placeholder="Email Address" name = "" required>
         </span>
         <span>
             <input class = "span1" type = "datetime-local" placeholder="Date and Time" name = "" required>
         </span>
         <span>
-            <input class = "span1" type = "text" placeholder="No. of Guests for Dining" name = "" required>
+            <input class = "span1" type = "number" placeholder= "No. of Guests for Dining" min = "1" max = "10" name = "" required>
         </span>
         <button type = "submit">LogIn</button>
     </form>

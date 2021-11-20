@@ -5,11 +5,9 @@ from werkzeug.utils import redirect
 
 app = Flask(__name__)
 
-#add
 app.config["SESSION_PERMANENT"] =  False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
-#end add
 
 app.secret_key = "abc"  
 
@@ -17,7 +15,7 @@ app.secret_key = "abc"
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="",
+  password="Leocrz99!",
   database="Restaurant_Reservation"
 )
 
@@ -28,24 +26,21 @@ def hello_world():
     if request.method == "POST":
         email_login = request.form['email_login']
         pass_login = request.form['pass_login']  
-              
         # mycursor = mydb.cursor()
         # sql_select = "SELECT Email, Password FROM Users"
         # mycursor.execute(sql_select) 
         # result = mycursor.fetchall()
 
-        # session["email"] = email_login #get email to html 
+        # session["email"] = email_login #get email to html       
         mycursor.execute('SELECT * FROM users WHERE email = %s AND password = %s', (email_login, pass_login, ))
         account = mycursor.fetchone()
 
         if account:
-            # session['name'] = account['name']
-            session['name'] = account[0] #change tuple
+            session['name'] = account[0] 
 
             return redirect ("/user_reservation")
         else:
            flash("Email and/or password is incorrect.", "error")
-
         # print(result)
         # for i in range(len(result)):
         #     if email_login == result[i][0] and pass_login == result[i][1]:
@@ -55,9 +50,7 @@ def hello_world():
         #         return redirect ("/user_reservation")
         #     else:
         #         flash("Email and/or password is incorrect.", "error")
-
     return render_template("index.html")
-
 
 @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
@@ -69,8 +62,14 @@ def sign_up():
         pass_word = request.form['pass_word']
         pass_c = request.form['pass_c']
 
-        if pass_word == pass_c:
-            mycursor = mydb.cursor()
+        mycursor.execute('SELECT * FROM users WHERE email = %s',(email, ))
+        account = mycursor.fetchone()
+
+        if account:
+            flash("Email already exists")
+
+        elif pass_word == pass_c:
+            # mycursor = mydb.cursor()
             sql_insert = """INSERT INTO Users (First_Name, Last_Name, Phone_Number, Email, Password)
                             VALUES (%s, %s, %s, %s, %s)"""
             sql_value = (fname, lname, contact, email, pass_word)
@@ -85,13 +84,6 @@ def sign_up():
 
 @app.route("/user_reservation", methods=['GET', 'POST'])
 def user_reservation():
-    # msg = ''
-    # # if request.method == 'POST':
-    # email = session["email"]
-
-    # mycursor = mydb.cursor()
-    # mycursor.execute('Select First_Name from users where Email = %s', (email))
-    # msg = mycursor.fetchone()
     return render_template("user_reservation.html")
 
 @app.route("/reservation")

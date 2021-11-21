@@ -1,8 +1,9 @@
+from datetime import datetime
 from flask import Flask, render_template, url_for, request, flash, redirect, session
 from flask_session import Session
 import mysql.connector
 from werkzeug.utils import redirect
-
+import datetime
 app = Flask(__name__)
 
 app.config["SESSION_PERMANENT"] =  False
@@ -56,6 +57,9 @@ def sign_up():
         if account:
             flash("Email already exists")
 
+        elif len(contact) != 10:
+            flash("Invalid Phone No.")
+
         elif pass_word != pass_c:
             flash("Password fields do not match", "error")
 
@@ -72,15 +76,41 @@ def sign_up():
 
             return redirect ("http://127.0.0.1:5000/")
         
-        
     return render_template("sign_up.html")
 
 @app.route("/user_reservation", methods=['GET', 'POST'])
 def user_reservation():
+    if request.method == 'POST':
+
+        name = request.form['name']
+        contact = request.form['contact']
+        email = request.form['email']
+        date= request.form['date']
+        guest = request.form['guest']
+
+        
+        if date :
+            d1 = datetime.datetime.strptime(date,"%Y-%m-%dT%H:%M")
+            if d1 < datetime.datetime.now():
+                flash("Invalid Date")
+                
     return render_template("user_reservation.html")
 
-@app.route("/reservation")
+@app.route("/reservation", methods=['GET', 'POST'])
 def reservation():
+    if request.method == 'POST':
+
+        name = request.form['name']
+        contact = request.form['contact']
+        email = request.form['email']
+        date= request.form['date']
+        guest = request.form['guest']
+
+        
+        if date :
+            d1 = datetime.datetime.strptime(date,"%Y-%m-%dT%H:%M")
+            if d1 < datetime.datetime.now():
+                flash("Invalid Date")
     return render_template("reservation.html")
  
 if __name__ == '__main__':

@@ -7,6 +7,7 @@
 html,body{
     height:100%;
     /* overflow: hidden; */
+
 }
 nav{
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
@@ -58,7 +59,7 @@ li > a:hover{
     top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30em;
+    width: 500px;
     padding: 20px;
 }
 
@@ -72,6 +73,12 @@ input.span1{
     width: 100%;
     padding: 20px;
     border-color:black;
+}
+p.span1{
+    margin: 0px auto;
+    width: 100%;
+    padding: 5px;
+    color: red;
 }
 
 button{
@@ -98,13 +105,13 @@ button{
     margin-top: 15px;
     font-style: italic;
 }
-@media screen and (max-height: 720px){
+@media screen and (max-height: 770px){
     .background-img{
         background-image: none;
         height:0%; 
     }
     .bg-text{
-        width:70%;
+        /* width:70%; */
         top: 0%;
         left: 0%;
         transform: translate(0, 0);
@@ -113,7 +120,6 @@ button{
     }
     html,body{
         height: auto;
-        /* overflow: auto; */
 
     }
 }

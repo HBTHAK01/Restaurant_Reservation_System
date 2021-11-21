@@ -86,13 +86,16 @@ def user_reservation():
         contact = request.form['contact']
         email = request.form['email']
         date= request.form['date']
+        time = request.form['time']
         guest = request.form['guest']
 
         
         if date :
-            d1 = datetime.datetime.strptime(date,"%Y-%m-%dT%H:%M")
+            d1 = datetime.datetime.strptime(date,"%Y-%m-%d")
             if d1 < datetime.datetime.now():
                 flash("Invalid Date")
+        # if date:
+        #     flash(date)
                 
     return render_template("user_reservation.html")
 
@@ -104,13 +107,19 @@ def reservation():
         contact = request.form['contact']
         email = request.form['email']
         date= request.form['date']
+        time = request.form['time']
         guest = request.form['guest']
 
         
         if date :
-            d1 = datetime.datetime.strptime(date,"%Y-%m-%dT%H:%M")
+            # d1 = datetime.datetime.strptime(date,"%Y-%m-%dT%H:%M")
+            d1 = datetime.datetime.strptime(date,"%Y-%m-%d")
+
             if d1 < datetime.datetime.now():
                 flash("Invalid Date")
+        # if date:
+        #     flash(date)
+                
     return render_template("reservation.html")
  
 if __name__ == '__main__':

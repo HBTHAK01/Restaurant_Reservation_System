@@ -1,36 +1,38 @@
-*{
-    margin:0;
-    padding:0;
-    text-decoration: none;
-    box-sizing: border-box;
+body, html{
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
 }
 
 
-body{
-    background-image: url("../images/Home Page Background.jpg");
+.background{
+    background-image: url("../images/Reservation Background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
     background-attachment: fixed;
-    overflow: hidden; 
+    overflow: hidden;
+    height: 100%;
+     
 }
 
-.container{
-    width: 320px;
-    margin: 25vh 10vw;
-    background-color: whitesmoke;
-    padding: 40px;
-    position: relative;
-
+.container{   
+    width: 22vw;
+    height: 70vh;  
+    background-color: rgba(255,255,255,0.7);
+    padding: 4vw;
+    margin-top: 5vh;
+    margin-left: 5vw;
+    
 }
 
 .header{
-    margin: 0px auto 30px auto;
+    margin: 0 auto 5vh auto;
     text-align: center;
 }
 
 .header > label{
-    font-size: 30px;
+    font-size: 2.5vw;
     font-weight: bolder;
     font-style: italic;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
@@ -40,16 +42,17 @@ body{
     
 }
 .header > p{
-    margin-top: 15px;
+    margin-top: 2vh;
     font-style: italic;
+    font-size: 1.1vw;
 }
-.body{
-    text-align: center;
-}
+
 input.span1{
-    margin: 0px auto 30px auto;
-    width: 100%;
+    margin: 2vh auto 2vh auto;
+    width: 20vw;
     padding: 10px;
+    border-radius: 7px;
+    border-color: whitesmoke;
 }
 
 p.span1{
@@ -60,53 +63,72 @@ p.span1{
 }
 
 input.span2{
-    margin: 0px auto;
-    width: 100%;
+    margin: 2vh auto 2vh auto;
+    width: 20vw;
     padding: 10px;
+    border-radius: 7px;
+    border-color: white;
 }
 
 form > a{
     float: left;
-    margin: 10px auto 20px auto;
+    margin: 2vh auto 2vh auto;
+    font-size: 1.2vw;
 }
 button{
-    margin: 0px auto 30px auto;
-    width: 100%;
+    margin: 2vh auto 2vh auto;
+    border-radius: 7px;
+    width: 21.8vw;
     padding: 10px;
-    font-size: 18px;
+    font-size: 2.5vw;
     color: white;
+    text-align: center;
+    font-weight: 1vw;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
 }
 
 
 .sign-up{
     text-align: center;
-    margin: 0px auto 10px auto;
+    margin: 2vh auto 2vh auto;
+    font-size: 1.2vw;
 }
 
 .guest-user{
     text-align: center;
+    margin: 2vh auto 2vh auto;
+    font-size: 1.2vw;
 }
 
 
-@media screen and (max-width: 900px), screen and (max-height: 630px) {
-    body{
-        /* background-image: none; */
-        background-position: center top;
-        background-size: 100% 30%;
-        background-attachment: scroll;
-        overflow: auto;
-
+@media only screen and (max-width: 500px) {
+    body, html{
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
     }
-
-    .container{
-        margin: 480px auto 160px auto;
-        /* margin: 50% auto; */
+    .container{   
+        width: 35vw;
+        height: 70vh;  
+        background-color: rgba(255,255,255,0.7);
+        padding: 4vw;
+        margin-top: 5vh;
+        margin-left: 5vw;
+        
     }
-}
-
-@media screen and (max-width: 320px) {
-    .container{
-        width: 100%;
+    input.span2{
+        float: left;
+        margin: 0.5vh auto 2vh auto;
+        width: 20vw;
+        padding: 10px;
     }
-}
+    form > a{
+        float: left;
+        margin-top: 7vh;
+        margin-bottom: 5vh;
+        position: relative;
+        top: 5vh;
+        right: 22vw;
+        font-size: 1.2vw;
+    }
+  }

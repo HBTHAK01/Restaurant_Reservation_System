@@ -5,7 +5,9 @@
     box-sizing: border-box;
 }
 
-
+html,body{
+    height: 100%;
+}
 body{
     background-image: url("../images/Home Page Background.jpg");
     background-repeat: no-repeat;
@@ -13,14 +15,17 @@ body{
     background-size: 100% 100%;
     background-attachment: fixed;
     overflow: hidden; 
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
 }
-
+.log-in{
+    margin: auto;
+}
 .container{
     width: 320px;
-    margin: 25vh 10vw;
+    margin: auto;
     background-color: whitesmoke;
     padding: 40px;
-    position: relative;
 
 }
 
@@ -96,6 +101,7 @@ button{
         background-size: 100% 30%;
         background-attachment: scroll;
         overflow: auto;
+        grid-template-columns: repeat(1,1fr);
 
     }
 

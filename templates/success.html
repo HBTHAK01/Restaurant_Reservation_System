@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Success Page</title>
+
+{% endblock %}
+
+{% block body %}
+
+
+<h2>
+    Congratulations {{session.name2}}, your Table is booked on {{session.datetime[:10]}} at {{session["datetime"][11:]}} for {{session.count}} number of guests. Thanks for Booking with Registro.
+</h2>
+
+
+
+
+
+
+
+
+
+{% endblock %}

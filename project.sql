@@ -56,5 +56,4 @@ SET Booked = 0;
 
 UPDATE Bookings
 SET name=NULL,phone=NULL,email=NULL,date=NULL, time=NULL,Booked = 0;
-
 delete from users;

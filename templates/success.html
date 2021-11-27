@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Success Page</title>
+<link rel="stylesheet" href="static\css\success.css"
+
+{% endblock %}
+
+{% block body %}
+<section class = "nav-link">
+    <nav>
+        <label>
+            <a href = "http://127.0.0.1:5000/">Registro</a>
+        </label>
+        <ul> 
+            <li> <a href = "http://127.0.0.1:5000/">Hello {{session.name}} </a></li>
+            <li> <a href = "http://127.0.0.1:5000/">Sign out</a></li>
+        </ul>
+    </nav>
+</section>
+
+<div class = "message">
+    <h1>
+        Congratulations {{session.name2}}, your Table is booked on {{session.datetime[:10]}} at {{session["datetime"][11:]}} for {{session.count}} number of guests. Thanks for Booking with Registro.
+    </h1>
+</div>
+
+
+{% endblock %}

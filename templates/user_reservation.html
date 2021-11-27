@@ -8,39 +8,50 @@
 {% block body %}
 <section class = "nav-link">
     <nav>
-        <label>Registro</label>
+        <label>
+            <a href = "http://127.0.0.1:5000/">Registro</a>
+        </label>
         <ul> 
-            <li> <a href = "http://127.0.0.1:5000/">Hello {{session.name}} </a></li>
+            <li> <a href = "">Hello {{session.name}} </a></li>
             <li> <a href = "http://127.0.0.1:5000/">Sign out</a></li>
         </ul>
     </nav>
 </section>
 
-<div class = "background-img"></div>
-<div class="bg-text">
-    <div class = "header">
-        <label>Registro</label> 
-        <p>Restaurant reservation made easier with one click</p>
+<section class = "main">
+    <div class="container">
+        <div class = "header">
+            <label>Registro</label> 
+            <p>Restaurant reservation made easier with one click</p>
+        </div>
+        {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                        <p class = "error-message">{{msg}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}    
+            
+        <form method = "POST">
+            <span>
+                <input type = "text" placeholder= "Name" name = "name2" required>
+            </span>
+            <span>
+                <input type = "tel" placeholder= "Phone No." name = "contact"  required>
+            </span>
+            <span>
+                <input type = "email" placeholder="Email Address" name = "email" required>
+            </span>
+            <span>
+                <input type = "datetime-local" placeholder="Date and Time" name = "datetime" required>
+            </span>
+            <span>
+                <input type = "number" placeholder= "No. of Guests for Dining" name = "count"  min = "2" max = "8" step = "2" required>
+            </span>
+            <button type = "submit">Submit</button>
+        </form>
+        
     </div>
+</section>
 
-    <form method = "POST">
-        <span>
-            <input class = "span1" type = "text" placeholder= "Name" name = "name" required>
-        </span>
-        <span>
-            <input class = "span1" type = "tel" placeholder= "Phone No." name = "contact"  required>
-        </span>
-        <span>
-            <input class = "span1" type = "email" placeholder="Email Address" name = "email" required>
-        </span>
-        <span>
-            <input class = "span1" type = "datetime-local" placeholder="Date and Time" name = "date" required>
-        </span>
-        <span>
-            <input class = "span1" type = "number" placeholder= "No. of Guests for Dining" min = "1" max = "10" name = "guest" required>
-        </span>
-        <button type = "submit">Submit</button>
-    </form>
-    
-</div>
 {% endblock %}

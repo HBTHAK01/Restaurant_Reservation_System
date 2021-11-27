@@ -41,7 +41,9 @@ nav ul li a {
 li > a:hover{
     background-color: burlywood;
 }
-
+a:visited {
+    color:white;
+}
 body{
     background-image: url("../images/Reservation Background.jpg");
     background-repeat: no-repeat;
@@ -87,7 +89,7 @@ body{
 form input{
     margin: 2vh auto 2vh auto;
     width: 100%;
-    padding: 1vw 0px;
+    padding: .5vw 0px;
     border-color: white;
     font-size: 1.1vw;
 }

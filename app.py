@@ -157,7 +157,7 @@ def final_booking():
         sql_update = """UPDATE Bookings 
                         SET Name = %s, Phone = %s, Email = %s, Date = %s, Time = %s, Booked = %s
                         WHERE Table_Name = %s"""
-        sql_value = (session["name"], session["contact"], session["email"], session["datetime"][:10], session["datetime"][11:], 1, request.form["option"] )
+        sql_value = (session["name2"], session["contact"], session["email"], session["datetime"][:10], session["datetime"][11:], 1, request.form["option"] )
         mycursor.execute(sql_update, sql_value)
         mydb.commit()
 

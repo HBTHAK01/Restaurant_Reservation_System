@@ -56,6 +56,12 @@ form input{
     font-size: 1.1vw;
 }
 
+a:visited {
+    color:blue;
+}
+a{
+    text-decoration: none;
+}
 p.error-message{
     font-size: 1.1vw;
 

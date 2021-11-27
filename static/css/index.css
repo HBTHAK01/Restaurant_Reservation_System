@@ -69,6 +69,13 @@ form > a{
     margin: 2vh auto 2vh auto;
     font-size: 1.2vw;
 }
+a:visited {
+    color:blue;
+}
+
+a{
+    text-decoration: none;
+}
 
 button{
     margin: 2vh auto 2vh auto;

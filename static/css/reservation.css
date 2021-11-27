@@ -44,6 +44,9 @@ li > a:hover{
 a:visited {
     color:white;
 }
+a{
+    text-decoration: none;
+}
 body{
     background-image: url("../images/Reservation Background.jpg");
     background-repeat: no-repeat;

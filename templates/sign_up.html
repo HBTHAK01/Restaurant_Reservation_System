@@ -7,50 +7,51 @@
 
 {% block body %}
 
-<section class = "log-in">
+<section>
     <div class = container>
         <div class = "header">
-            <label>Sign Up Form</label> 
+            <label>Sign Up</label> 
+            <p>Restaurant reservation made easier with one click</p>
+    
         </div>
-        <div class = "body">
-            <form  method = "POST">
-                <span>
-                    <input class = "span1" type = "text" placeholder="First Name" name = "fname" required>
-                </span>
-                <span>
-                    <input class = "span1" type = "text" placeholder="Last Name" name = "lname" required>
-                </span>
-                <span>
-                    <input class = "span1" type = "text" placeholder="Phone Number" name = "contact" required>
-                </span>
-                <span>
-                    <input class = "span1" type = "text" placeholder="Email Address" name = "email" required>
-                </span>
-
-                {% with messages = get_flashed_messages() %}
+        {% with messages = get_flashed_messages() %}
                     {% if messages %}
                         {% for msg in messages %}
-                            <p class = "span1">{{msg}}</p>
+                            <p class = "error-message">{{msg}}</p>
                         {% endfor %}
                     {% endif %}
                 {% endwith %}
+    
+        <form  method = "POST">
+            <span>
+                <input type = "text" placeholder="First Name" name = "fname" required>
+            </span>
+            <span>
+                <input type = "text" placeholder="Last Name" name = "lname" required>
+            </span>
+            <span>
+                <input type = "tel" placeholder= "Phone No." name = "contact" required>
+            </span>
+            <span>
+                <input type = "email" placeholder="Email Address" name = "email" required>
+            </span>
 
-                <span>
-                    <input class = "span1" type = "password" placeholder="Create Password" name = "pass_word" required>
-                </span>
-                <span>
-                    <input class = "span1" type = "password" placeholder="Confirm Password" name = "pass_c" required>
-                </span>
-                
-                <button type = "submit">Sign Up</button>
-            </form>
-        </div>
+            <span>
+                <input type = "password" placeholder="Create Password" name = "pass_word" required>
+            </span>
+            <span>
+                <input type = "password" placeholder="Confirm Password" name = "pass_c" required>
+            </span>
+            
+            <button type = "submit">Register</button>
+        </form>
         <div class = "sign-up">
             <p>Already a member? <a href = "http://127.0.0.1:5000/">Login Now</a> </p>   
         </div>
         <div class = "guest-user">
-            <a href = reservation>Continue as Guest</a> 
+            <a href = guest_reservation>Continue as Guest</a> 
         </div>
     </div>
 </section>
+
 {% endblock %}

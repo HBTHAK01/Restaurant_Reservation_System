@@ -44,13 +44,21 @@ nav ul li a {
     padding:1vw;
     border-radius: 1vw;  
 }
+li{
+    color:white;
+    font-size: 1vw;
 
+}
 li > a:hover{
     background-color: burlywood;
 }
 a:visited {
     color:white;
 }
+a{
+    text-decoration: none;
+}
+
 .message{
     position: absolute;
     top: 50%;

@@ -17,7 +17,7 @@ Session(app)
 
 app.secret_key = "abc"  
 
-# Database Part for MySQL
+# Database Part for MySQLg
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
@@ -37,7 +37,7 @@ def hello_world():
         # print(account)
 
         if account:
-            session['name'] = account[0] 
+            session['name'] = "Hello " + account[0] 
 
             return redirect ("/user_reservation")
         else:
@@ -105,6 +105,35 @@ def sign_up():
         
     return render_template("sign_up.html")
 
+@app.route("/forgot_password", methods=['GET', 'POST'])
+def forgot_password():
+
+    if request.method == 'POST':
+        email = request.form['email']
+        new_password = request.form['new_password']
+        confirm_password = request.form['confirm_password']
+
+        mycursor = mydb.cursor()
+        mycursor.execute('SELECT * FROM users WHERE email = %s',(email, ))
+        account = mycursor.fetchone()
+
+        if not account:
+            flash("Email does not exists")
+
+        elif new_password != confirm_password:
+            flash("Password fields do not match", "error")
+
+        elif len(new_password) < 7:
+            flash("Password must contain at least 7 characters.")
+
+        else:
+            mycursor.execute ('UPDATE users SET Password = %s where email = %s',(new_password, email,) )
+            mydb.commit()
+            return redirect ("http://127.0.0.1:5000/")
+
+    return render_template("forgot_password.html")
+
+
 @app.route("/user_reservation", methods=['GET', 'POST'])
 def user_reservation():            
     if request.method == 'POST':
@@ -115,17 +144,26 @@ def user_reservation():
         session['count'] = request.form['count']
 
         #Unit TEST needed
-        if request.form['datetime'] :
+
+        if len(request.form['contact']) != 10:
+            flash("Invalid Phone No.")
+            return redirect("/user_reservation")  
+
+        elif request.form['datetime'] :
             d1 = datetime.datetime.strptime(request.form['datetime'],"%Y-%m-%dT%H:%M")
             if d1 < datetime.datetime.now():
                 flash("Invalid Date")  
                 return redirect("/user_reservation")  
+
         return redirect ("/final_booking")
 
     return render_template("user_reservation.html")
 
 @app.route("/guest_reservation", methods=['GET', 'POST'])
 def guest_reservation():
+
+    session['name'] = ""
+
     if request.method == 'POST':
         session['name2'] = request.form['name2']
         session['contact'] = request.form['contact']
@@ -134,7 +172,12 @@ def guest_reservation():
         session['count'] = request.form['count']
 
         #Unit TEST needed
-        if request.form['datetime'] :
+
+        if len(request.form['contact']) != 10:
+            flash("Invalid Phone No.")
+            return redirect("/guest_reservation")  
+
+        elif request.form['datetime'] :
             d1 = datetime.datetime.strptime(request.form['datetime'],"%Y-%m-%dT%H:%M")
             if d1 < datetime.datetime.now():
                 flash("Invalid Date")  

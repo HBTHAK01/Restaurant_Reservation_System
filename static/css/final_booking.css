@@ -54,6 +54,7 @@ a:visited {
 a{
     text-decoration: none;
 }
+
 form{
     position: absolute;
     top: 50%;
@@ -63,27 +64,38 @@ form{
 
     text-align: center;
 
-    width: 30vw;
-    padding: 3vw;
-}
-
-
-button, input{
+    width: 35vw;
     padding: 1vw;
-    margin: 1vw;
 }
 
-input{
-    width: 6vw;
-    margin: auto;
-    text-align: center;
-}
 
-.table-options, .submit{
+
+.table-options{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2vw;
     margin: 1vw auto;
+}
+
+.submit{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1.5vw;
+    padding: .5vw;
+
+}
+
+button, input{
+    padding: 1vw;
+    margin: 1vw;
+    font-size: 1vw;
+}
+
+input{
+    width: 6vw;
+    margin: 1vw auto auto auto;
+    text-align: center;
 }
 
 .table-options button{
@@ -104,7 +116,6 @@ input{
     box-sizing: border-box;
     font-weight: bold;
     cursor: pointer;
-
 }
 .table-options button, .submit button{
     width:8vw;
@@ -142,7 +153,6 @@ input{
     }
   
     form{
-        
         width: 320px;
         padding: 20px;
     }
@@ -150,12 +160,15 @@ input{
     button, input{
         padding: 10px;
         margin: 10px;
+        font-size: 1rem;
     }
 
     input{
         width: 100px;
     }
-
+    .submit{
+        flex-direction: row;
+    }
     .table-options, .submit{
         grid-gap: 50px;
         margin: 20px auto;

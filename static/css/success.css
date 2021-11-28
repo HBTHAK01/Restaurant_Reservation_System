@@ -97,6 +97,10 @@ a{
         padding:10px;
         border-radius: 10px;  
     }
+
+    li{
+        font-size: 17px;
+    }
   }
   @media screen and (max-width: 500px) {
     nav {

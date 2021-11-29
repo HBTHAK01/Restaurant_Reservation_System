@@ -2,7 +2,8 @@
 
 {% block head %}
 <title>Reservation</title>
-<link rel="stylesheet" href="static\css\reservation.css"
+<link rel="stylesheet" href="static\css\reservation.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
 {% endblock %}
 
 {% block body %}
@@ -43,7 +44,15 @@
                 <input type = "email" placeholder="Email Address" name = "email" required>
             </span>
             <span>
-                <input type = "datetime-local" step = "3600" placeholder="Date and Time" name = "datetime" required>
+                <input id = "dateInput" type = "datetime-local" placeholder="Date and Time" name = "datetime" required>
+                <script> 
+                    $(document).ready(function(){
+                        elem = document.getElementById("dateInput")
+                        var iso = new Date().toISOString().slice(0,16) ;
+                        elem.min = iso
+                        });
+                </script>
+               
             </span>
             <span>
                 <input type = "number" placeholder= "No. of Guests for Dining" name = "count"  min = "2" max = "8" step = "2" required>

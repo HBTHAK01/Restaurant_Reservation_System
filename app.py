@@ -17,7 +17,7 @@ Session(app)
 
 app.secret_key = "abc"  
 
-# Database Part for MySQLg
+# Database Part for MySQL
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
@@ -149,11 +149,11 @@ def user_reservation():
             flash("Invalid Phone No.")
             return redirect("/user_reservation")  
 
-        elif request.form['datetime'] :
-            d1 = datetime.datetime.strptime(request.form['datetime'],"%Y-%m-%dT%H:%M")
-            if d1 < datetime.datetime.now():
-                flash("Invalid Date")  
-                return redirect("/user_reservation")  
+        # elif request.form['datetime'] :
+        #     d1 = datetime.datetime.strptime(request.form['datetime'],"%Y-%m-%dT%H:%M")
+        #     if d1 < datetime.datetime.now():
+        #         flash("Invalid Date")  
+        #         return redirect("/user_reservation")  
 
         return redirect ("/final_booking")
 
@@ -177,11 +177,11 @@ def guest_reservation():
             flash("Invalid Phone No.")
             return redirect("/guest_reservation")  
 
-        elif request.form['datetime'] :
-            d1 = datetime.datetime.strptime(request.form['datetime'],"%Y-%m-%dT%H:%M")
-            if d1 < datetime.datetime.now():
-                flash("Invalid Date")  
-                return redirect("/guest_reservation")  
+        # elif request.form['datetime'] :
+        #     d1 = datetime.datetime.strptime(request.form['datetime'],"%Y-%m-%dT%H:%M")
+        #     if d1 < datetime.datetime.now():
+        #         flash("Invalid Date")  
+        #         return redirect("/guest_reservation")  
 
         return redirect ("/final_booking")
 

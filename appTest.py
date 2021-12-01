@@ -17,9 +17,22 @@ class FlaskTestRoutes(unittest.TestCase):
 
     def test_reservation(self):
         tester = app.test_client(self)
-        response = tester.get("/reservation", follow_redirects=True)
+        response = tester.get("/success", follow_redirects=True)
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
+    
+    def test_reservation(self):
+        tester = app.test_client(self)
+        response = tester.get("/guest_reservation", follow_redirects=True)
+        statuscode = response.status_code
+        self.assertEqual(statuscode, 200)
+
+    def test_reservation(self):
+        tester = app.test_client(self)
+        response = tester.get("/forgot_password", follow_redirects=True)
+        statuscode = response.status_code
+        self.assertEqual(statuscode, 200)
+    
     
 class FlaskTestHTMLdata(unittest.TestCase):
     def test_login_form(self):

@@ -10,11 +10,11 @@
 <section class = "nav-link">
     <nav>
         <label>
-            <a href = "http://127.0.0.1:5000/">Registro</a>
+            <a href = "/">Registro</a>
         </label>
         <ul> 
             <li> <a href = "">{{session.name}} </a></li>
-            <li> <a href = "http://127.0.0.1:5000/">Sign out</a></li>
+            <li> <a href = "/">Sign out</a></li>
         </ul>
     </nav>
 </section>
@@ -38,7 +38,7 @@
                 <input type = "text" placeholder= "Name" name = "name2" required>
             </span>
             <span>
-                <input type = "tel" placeholder= "Phone No." name = "contact"  required>
+                <input type = "tel" placeholder= "Phone No." name = "contact" pattern= "[0-9]{10}" required>
             </span>
             <span>
                 <input type = "email" placeholder="Email Address" name = "email" required>

@@ -127,6 +127,14 @@ input{
     background-color: burlywood;
 }
 
+.busy {
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 10vh;
+}
 
 @media only screen and (max-width: 1024px), screen and (max-height: 500px) {
     nav > label{

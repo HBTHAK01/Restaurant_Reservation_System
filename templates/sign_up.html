@@ -10,7 +10,7 @@
 <section>
     <div class = container>
         <div class = "header">
-            <label>Sign Up</label> 
+            <label>Registro</label> 
             <p>Restaurant reservation made easier with one click</p>
     
         </div>
@@ -30,7 +30,7 @@
                 <input type = "text" placeholder="Last Name" name = "lname" required>
             </span>
             <span>
-                <input type = "tel" placeholder= "Phone No." name = "contact" required>
+                <input type = "tel" placeholder= "Phone No." name = "contact" pattern= "[0-9]{10}" required>
             </span>
             <span>
                 <input type = "email" placeholder="Email Address" name = "email" required>
@@ -43,10 +43,10 @@
                 <input type = "password" placeholder="Confirm Password" name = "pass_c" required>
             </span>
             
-            <button type = "submit">Register</button>
+            <button type = "submit">Signup</button>
         </form>
         <div class = "sign-up">
-            <p>Already a member? <a href = "http://127.0.0.1:5000/">Login Now</a> </p>   
+            <p>Already a member? <a href = "/">Login Now</a> </p>   
         </div>
         <div class = "guest-user">
             <a href = guest_reservation>Continue as Guest</a> 

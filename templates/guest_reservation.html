@@ -12,9 +12,9 @@
         <label>
             <a href = "/">Registro</a>
         </label>
-        <ul> 
-            <li> <a href = "">{{session.name}} </a></li>
-            <li> <a href = "/">Sign out</a></li>
+        <ul>
+            <li> <a href = "/">Login</a></li>
+            <li> <a href = "sign_up">Sign Up</a></li>
         </ul>
     </nav>
 </section>
@@ -51,7 +51,9 @@
                         var iso = new Date().toISOString().slice(0,16) ;
                         elem.min = iso
                         });
-                </script>            </span>
+                </script>
+               
+            </span>
             <span>
                 <input type = "number" placeholder= "No. of Guests for Dining" name = "count"  min = "2" max = "8" step = "2" required>
             </span>
@@ -60,5 +62,6 @@
         
     </div>
 </section>
+
 
 {% endblock %}

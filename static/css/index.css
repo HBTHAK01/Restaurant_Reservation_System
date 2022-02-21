@@ -1,73 +1,67 @@
 body, html{
     height: 100%;
     margin: 0;
-    overflow: hidden;
 }
 
-
-.background{
+body{
     background-image: url("../images/Reservation Background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
     background-attachment: fixed;
-    overflow: hidden;
-    height: 100%;
-     
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    overflow: hidden;     
+}
+
+section{
+    margin: auto;
 }
 
 .container{   
     width: 22vw;
-    height: 70vh;  
     background-color: rgba(255,255,255,0.7);
-    padding: 4vw;
-    margin-top: 5vh;
-    margin-left: 5vw;
-    
+    padding: 3vw;
 }
 
 .header{
-    margin: 0 auto 5vh auto;
+    margin: 0 auto 1.5vh auto;
     text-align: center;
 }
 
 .header > label{
-    font-size: 2.5vw;
+    font-size: 3vw;
     font-weight: bolder;
     font-style: italic;
+
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    
 }
+
 .header > p{
-    margin-top: 2vh;
     font-style: italic;
     font-size: 1.1vw;
 }
 
-input.span1{
+form input{
     margin: 2vh auto 2vh auto;
-    width: 20vw;
-    padding: 10px;
-    border-radius: 7px;
-    border-color: whitesmoke;
+    width: 100%;
+    padding: .5vw 0px;
+    border-color: white;
+    font-size: 1.1vw;
 }
 
-p.span1{
+p.error-message{
+    font-size: 1.1vw;
+
     margin: 0px auto;
     width: 100%;
     padding: 5px;
-    color: red;
-}
 
-input.span2{
-    margin: 2vh auto 2vh auto;
-    width: 20vw;
-    padding: 10px;
-    border-radius: 7px;
-    border-color: white;
+    color: red;
 }
 
 form > a{
@@ -75,60 +69,86 @@ form > a{
     margin: 2vh auto 2vh auto;
     font-size: 1.2vw;
 }
+a:visited {
+    color:blue;
+}
+
+a{
+    text-decoration: none;
+}
+
 button{
     margin: 2vh auto 2vh auto;
     border-radius: 7px;
-    width: 21.8vw;
+    width: 100%;
     padding: 10px;
-    font-size: 2.5vw;
-    color: white;
+
+    font-size: 2vw;
     text-align: center;
     font-weight: 1vw;
+
+    color: white;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
 }
 
 
-.sign-up{
-    text-align: center;
-    margin: 2vh auto 2vh auto;
-    font-size: 1.2vw;
-}
-
-.guest-user{
+.sign-up,.guest-user{
     text-align: center;
     margin: 2vh auto 2vh auto;
     font-size: 1.2vw;
 }
 
 
-@media only screen and (max-width: 500px) {
-    body, html{
-        height: 100%;
-        margin: 0;
-        overflow: hidden;
+@media only screen and (max-width: 1024px), screen and (max-height: 500px) {
+    body{
+        overflow: auto;
+        grid-template-columns: repeat(1,1fr);
     }
+
+    .header > label{
+        font-size: 2rem;    
+    }
+    .header > p{
+        font-size: 1rem;
+    }
+
+   
     .container{   
-        width: 35vw;
-        height: 70vh;  
+        width: 320px;
         background-color: rgba(255,255,255,0.7);
-        padding: 4vw;
-        margin-top: 5vh;
-        margin-left: 5vw;
-        
+        margin: 100px auto;
     }
-    input.span2{
-        float: left;
-        margin: 0.5vh auto 2vh auto;
-        width: 20vw;
-        padding: 10px;
+    
+    p.error-message{
+        font-size: 1rem;
+    }
+    
+    form input{
+        margin: 0px auto 30px auto;
+        font-size: 1rem;
     }
     form > a{
-        float: left;
-        margin-top: 7vh;
-        margin-bottom: 5vh;
-        position: relative;
-        top: 5vh;
-        right: 22vw;
-        font-size: 1.2vw;
+        margin: 10px auto 20px auto;
+        font-size: 1rem;
+    }
+    
+    button{
+        margin: 0px auto 30px auto;
+        padding: 10px;
+        font-size: 18px;  
+    }
+    
+    .sign-up{
+        margin: 0px auto 10px auto;
+        font-size: 1rem;
+    }
+    .guest-user{
+        font-size: 1rem;
     }
   }
+  @media screen and (max-width: 320px) {
+   
+    .container{
+        width: 100%;
+    }
+}

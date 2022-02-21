@@ -2,22 +2,28 @@
 
 {% block head %}
 <title>Success Page</title>
+<link rel="stylesheet" href="static\css\success.css"
 
 {% endblock %}
 
 {% block body %}
+<section class = "nav-link">
+    <nav>
+        <label>
+            <a href = "/">Registro</a>
+        </label>
+        <ul> 
+            <li> {{session.name}}</li>
+            <li> <a href = "/">Sign out</a></li>
+        </ul>
+    </nav>
+</section>
 
-
-<h2>
-    Congratulations {{session.name2}}, your Table is booked on {{session.datetime[:10]}} at {{session["datetime"][11:]}} for {{session.count}} number of guests. Thanks for Booking with Registro.
-</h2>
-
-
-
-
-
-
-
+<div class = "message">
+    <h1>
+        Congratulations {{session.name2}}, your Table is booked on {{session.datetime[:10]}} at {{session["datetime"][11:]}} for {{session.count}} number of guests. Thanks for Booking with Registro.
+    </h1>
+</div>
 
 
 {% endblock %}

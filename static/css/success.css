@@ -1,0 +1,136 @@
+body, html{
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    background-image: url("../images/Reservation Background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    overflow: hidden;     
+}
+nav{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
+    width: 100%;
+    overflow: hidden;
+    
+}
+nav > label{
+    color:White;
+    font-size: 2vw;
+    padding:0 3vw;
+    font-weight: bold;
+    line-height: 10vh;
+}
+
+nav ul {
+    list-style: none;
+    float:right;
+    margin-right: 2vw;
+    padding: 0;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 7vh;
+    margin:0 1vw;
+}
+nav ul li a {
+    color: white;
+    font-size: 1vw;
+
+    padding:1vw;
+    border-radius: 1vw;  
+}
+li{
+    color:white;
+    font-size: 1vw;
+
+}
+li > a:hover{
+    background-color: burlywood;
+}
+a:visited {
+    color:white;
+}
+a{
+    text-decoration: none;
+}
+
+.message{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color:darkgreen;
+    text-shadow: 1px 1px black;
+    background-color: rgba(255,255,255,0.7);
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+
+}
+@media only screen and (max-width: 1024px), screen and (max-height: 500px) {
+    nav > label{
+        font-size: 30px;
+        padding:0 50px;
+        line-height: 80px;
+        margin: 0;
+    }
+    
+    nav ul {
+        margin: auto auto auto 20px;
+        
+    }
+    nav ul li{
+        line-height: 80px;
+        margin:0 10px;
+        
+    }
+    nav ul li a {
+        font-size: 17px;
+    
+        padding:10px;
+        border-radius: 10px;  
+    }
+
+    li{
+        font-size: 17px;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    nav {
+        display: block;
+        padding: 0;
+        text-align: center;
+    }
+    nav > label{
+        padding:0px;
+    }
+    nav ul {
+        margin: auto;
+        float:none;
+        text-align: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 500px) {
+    nav {
+        display: block;
+        padding: 0;
+        text-align: center;
+    }
+    nav > label{
+        padding:0px;
+    }
+    nav ul {
+        margin: auto;
+        float:none;
+        text-align: center;
+        align-items: center;
+    }
+}

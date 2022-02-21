@@ -1,123 +1,197 @@
-*{
-    margin:0;
-    padding:0;
-    text-decoration: none;
-    box-sizing: border-box;
-}
 html,body{
     height:100%;
-    /* overflow: hidden; */
+    margin: 0;
+    overflow: auto;
 }
+
 nav{
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
     width: 100%;
     overflow: hidden;
+    
 }
 nav > label{
     color:White;
-    font-size: 30px;
-    padding:0 50px;
+    font-size: 2vw;
+    padding:0 3vw;
     font-weight: bold;
-    line-height: 80px;
+    line-height: 10vh;
 }
 
 nav ul {
     list-style: none;
     float:right;
-    margin-right: 20px;
+    margin-right: 2vw;
+    padding: 0;
 }
+
 nav ul li{
     display: inline-block;
-    line-height: 80px;
-    margin:0 10px;
+    line-height: 7vh;
+    margin:0 1vw;
 }
 nav ul li a {
     color: white;
-    font-size: 17px;
+    font-size: 1vw;
 
-    padding:10px;
-    border-radius: 10px;  
+    padding:1vw;
+    border-radius: 1vw;  
 }
 
 li > a:hover{
     background-color: burlywood;
 }
-
-.background-img{
-    background-image: url("../images/Reservation Background.jpg");
-    filter: blur(4px);
-    height:100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+a:visited {
+    color:white;
 }
-.bg-text {
-    background-color: whitesmoke; 
-    color: black;
-    position: absolute;
-    top: 58%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30em;
-    padding: 20px;
+a{
+    text-decoration: none;
+}
+body{
+    background-image: url("../images/Reservation Background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+.main{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 2vh auto;
+}
+
+.container {
+    width: 22vw;
+    background-color: rgba(255,255,255,0.7);
+    padding: 3vw;
+
+    margin: auto;
 }
 
 .header{
-    margin: 0px auto 30px auto;
+    margin: 0 auto 1.5vh auto;
     text-align: center;
 }
 
-input.span1{
-    margin: 0px auto 30px auto;
+.header > label{
+    font-size: 3vw;
+    font-weight: bolder;
+    font-style: italic;
+
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header > p{
+    font-style: italic;
+    font-size: 1.1vw;
+}
+
+form input{
+    margin: 2vh auto 2vh auto;
     width: 100%;
-    padding: 20px;
-    border-color:black;
+    padding: .5vw 0px;
+    border-color: white;
+    font-size: 1.1vw;
+}
+
+p.error-message{
+    font-size: 1.1vw;
+
+    margin: 0px auto;
+    width: 100%;
+    padding: 5px;
+
+    color: red;
 }
 
 button{
-    margin: 0px auto 30px auto;
+    margin: 2vh auto 2vh auto;
+    border-radius: 7px;
     width: 100%;
     padding: 10px;
-    font-size: 18px;
+
+    font-size: 2vw;
+    text-align: center;
+    font-weight: 1vw;
+
     color: white;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
 }
 
 
-.header > label{
-    font-size: 30px;
-    font-weight: bolder;
-    font-style: italic;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,73,9,1) 100%, rgba(0,212,255,1) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-}
-.header > p{
-    margin-top: 15px;
-    font-style: italic;
-}
-@media screen and (max-height: 720px){
-    .background-img{
-        background-image: none;
-        height:0%; 
+@media only screen and (max-width: 1024px), screen and (max-height: 500px) {
+    .main{
+        grid-template-columns: repeat(1,1fr);
+        margin: 100px auto;
     }
-    .bg-text{
-        width:70%;
-        top: 0%;
-        left: 0%;
-        transform: translate(0, 0);
-        position: relative;
-        margin:100px auto;
-    }
-    html,body{
-        height: auto;
-        /* overflow: auto; */
 
+    .header > label{
+        font-size: 2rem;    
     }
-}
-@media screen and (max-width: 525px) {
+    .header > p{
+        font-size: 1rem;
+    }
+
+    .container{   
+        width: 320px;
+        background-color: rgba(255,255,255,0.7);
+    }
+    
+    p.error-message{
+        font-size: 1rem;
+    }
+    
+    form input{
+        margin: 0px auto 30px auto;
+        font-size: 1rem;
+    }
+    form > a{
+        margin: 10px auto 20px auto;
+        font-size: 1rem;
+    }
+    
+    button{
+        margin: 0px auto 30px auto;
+        padding: 10px;
+        font-size: 18px;  
+    }
+    
+    .sign-up{
+        margin: 0px auto 10px auto;
+        font-size: 1rem;
+    }
+    
+    .guest-user{
+        font-size: 1rem;
+    }
+   
+    nav > label{
+        font-size: 30px;
+        padding:0 50px;
+        line-height: 80px;
+        margin: 0;
+    }
+    
+    nav ul {
+        margin: auto auto auto 20px;
+        
+    }
+    nav ul li{
+        line-height: 80px;
+        margin:0 10px;
+        
+    }
+    nav ul li a {
+        font-size: 17px;
+    
+        padding:10px;
+        border-radius: 10px;  
+    }
+  }
+  @media screen and (max-width: 500px) {
     nav {
         display: block;
         padding: 0;
@@ -132,21 +206,10 @@ button{
         text-align: center;
         align-items: center;
     }
-    .background-img{
-        background-image: none;
-        height:0%; 
-    }
-    .bg-text{
-        width:100%;
-        top: 0%;
-        left: 0%;
-        transform: translate(0, 0);
-        position: relative;
-        margin:100px auto;
-    }
-    html,body{
-        height: auto;
-        /* overflow: auto; */
-
+}
+  @media screen and (max-width: 320px) {
+   
+    .container{
+        width: 100%;
     }
 }

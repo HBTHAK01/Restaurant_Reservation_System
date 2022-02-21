@@ -7,40 +7,34 @@
 
 {% block body %}
 
-<div class="background"</div>
-<div class = container>
-    <div class = "header">
-        <label>Registro</label> 
-        <p>Restaurant reservation made easier with one click</p>
-    </div>
-
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for msg in messages %}
-                <p class = "span1">{{msg}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}    
-
-    <div class = "body">
+<section>
+    <div class = "container">
+        <div class = "header">
+            <label>Registro</label> 
+            <p>Restaurant reservation made easier with one click</p>
+        </div>
+    
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p class = "error-message">{{msg}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}    
+    
         <form method = "POST">
-            <span>
-                <input class = "span1" type = "text" placeholder="Email Address" name = "email_login" required>
-            </span>
-            <span>
-                <input class = "span2" type = "password" placeholder="Password" name = "pass_login" required>
-            </span>
-            <a href = #>Forgot password?</a> 
+                <input type = "text" placeholder="Email Address" name = "email_login" required>
+                <input type = "password" placeholder="Password" name = "pass_login" required>
+            <a href = forgot_password>Forgot password?</a> 
             <button type = "submit">Login</button>
         </form>
+        <div class = "sign-up">
+            <p>Not a member? <a href = sign_up>Sign Up Now</a> </p>   
+        </div>
+        <div class = "guest-user">
+            <a href = guest_reservation>Guest-User</a> 
+        </div>
     </div>
-    <div class = "sign-up">
-        <p>Not a member? <a href = sign_up>Sign Up Now</a> </p>   
-    </div>
-    <div class = "guest-user">
-        <a href = reservation>Guest-User</a> 
-    </div>
-</div>
-
+</section>
 
 {% endblock %}

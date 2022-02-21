@@ -2,28 +2,47 @@
 
 {% block head %}
 <title>Final Booking</title>
-
+<link rel="stylesheet" href="static\css\final_booking.css"
 {% endblock %}
 
 {% block body %}
 
-
-<form method = "POST">
-    {% for i in result %}
-    <button>{{i[0]}}</button>                    
-    {% endfor %}
-    <br> <br>
-    <input type = "text" placeholder= "Enter Table" name = "option" required>
-    <br> <br>
-    <button type = "submit">BOOK</button>
-</form>
-
-
+<section class = "nav-link">
+    <nav>
+        <label>
+            <a href = "/">Registro</a>
+        </label>
+        <ul>
+            <li> <a href = "/">Cancel Registration</a></li>
+        </ul>
+    </nav>
+</section>
 
 
 
 
+<section class = "tables">
 
+    {% if result2[0] > 10 %}
+    <h1 class="busy">Restaurant is Busy</h1>
+    {% endif %}
 
+    <form method = "POST">
+        <div class = "table-options">
+
+            {% for i in result %}
+        
+            <button>{{i[0]}}</button>         
+        
+            {% endfor %}
+        </div>
+
+        <div class = "submit">
+            <input type = "text" placeholder= "Enter Table" name = "option" required>
+            <button type = "submit">BOOK</button>
+        </div>
+        
+    </form>
+</section>
 
 {% endblock %}
